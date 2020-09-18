@@ -1,0 +1,11 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  background-color: #fafafa;
+}
+
+.headerLogo {
+  width: 200px;
+}
