@@ -12,14 +12,14 @@ function App() {
           description: "pizza pequena e boa",
           price: "24,99",
           image:
-            "https://res.cloudinary.com/dkstxiqv6/image/upload/c_scale,w_300/v1598116865/pizza-portuguesa_vjylji.png",
+            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
         },
         {
           title: "Pizza G",
           description: "pizza grande e tri boa",
           price: "34,99",
           image:
-            "https://res.cloudinary.com/dkstxiqv6/image/upload/c_scale,w_300/v1593186792/pizza-de-calabresa_enfb11.jpg",
+            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
         },
       ],
     },
@@ -42,10 +42,35 @@ function App() {
       <Header image="https://personalwebsite-5d16b.web.app/images/nrdLogo.png" />
       {products.map((section) => {
         return (
-          <div>
-            {section.products.map((product) => {
-              return <ProductCard product={product} onClick={addProduct} />;
-            })}
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              flexWrap: "wrap",
+              boxSizing: "border-box",
+            }}
+          >
+            <h2
+              className="sectionTitle"
+              style={{ width: "100%", paddingLeft: "1rem" }}
+            >
+              {section.category}
+            </h2>
+            <div
+              className="sectionProductsDiv"
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              {section.products.map((product) => {
+                return <ProductCard product={product} onClick={addProduct} />;
+              })}
+            </div>
           </div>
         );
       })}
