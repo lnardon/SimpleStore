@@ -1,0 +1,6 @@
+.sectionHeaderContainer {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 1rem;
+  box-sizing: border-box;
+}
