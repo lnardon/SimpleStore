@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SectionHeader from "./components/SectionHeader";
 import ProductCard from "./components/ProductCard";
+import Modal from "./components/Modal";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState({});
   const [products, setProducts] = useState([
     {
       category: "Pizzas",
@@ -105,7 +108,8 @@ function App() {
   ]);
 
   function addProduct(product) {
-    console.log(product);
+    setSelectedItem(product);
+    setIsOpen(!isOpen);
   }
 
   useEffect(() => {
@@ -117,7 +121,8 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%", position: "relative" }}>
+      {isOpen ? <Modal item={selectedItem} setIsOpen={setIsOpen} /> : null}
       <Header image="https://personalwebsite-5d16b.web.app/images/nrdLogo.png" />
       {products.map((section) => {
         return (
@@ -137,18 +142,19 @@ function App() {
               className="sectionProductsDiv"
               style={{
                 width: "100%",
+                maxWidth: "1200px",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 flexWrap: "wrap",
               }}
             >
-              {section.products.map((product) => {
+              {section.products.map((product, index) => {
                 return (
                   <ProductCard
                     product={product}
                     onClick={addProduct}
-                    key={product.title}
+                    key={index}
                   />
                 );
               })}
