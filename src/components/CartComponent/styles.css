@@ -1,0 +1,51 @@
+.cartContainer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #fafafa;
+  z-index: 10;
+  animation: appearAnimation 0.5s ease-in-out forwards;
+}
+
+.closeCart {
+  animation: disappearAnimation 0.5s ease-in-out forwards;
+}
+
+.closeCartDiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.closeIcon {
+  width: 25px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.finishBtn {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #f27405;
+}
+
+@keyframes appearAnimation {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes disappearAnimation {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

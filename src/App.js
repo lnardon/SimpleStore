@@ -5,11 +5,13 @@ import SectionHeader from "./components/SectionHeader";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/Modal";
 import CartIndicator from "./components/CartIndicator";
+import CartComponent from "./components/CartComponent";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
   const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [products, setProducts] = useState([
     {
       category: "Pizzas",
@@ -121,6 +123,10 @@ function App() {
     setIsOpen(!isOpen);
   }
 
+  function handleCart() {
+    setIsCartOpen(!isCartOpen);
+  }
+
   useEffect(() => {
     (async () => {
       const response = await fetch("");
@@ -131,6 +137,7 @@ function App() {
 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
+      {isCartOpen ? <CartComponent closeCart={handleCart} /> : null}
       {isOpen ? (
         <Modal item={selectedItem} setIsOpen={setIsOpen} addItem={addItem} />
       ) : null}
@@ -173,7 +180,7 @@ function App() {
           </div>
         );
       })}
-      {cartItems.length ? <CartIndicator /> : null}
+      {cartItems.length ? <CartIndicator openCart={handleCart} /> : null}
     </div>
   );
 }

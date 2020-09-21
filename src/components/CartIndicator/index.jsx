@@ -2,9 +2,9 @@ import React from "react";
 
 import "./styles.css";
 
-function CartIndicator() {
+function CartIndicator({ openCart }) {
   return (
-    <div className="cartIndicatorContainer">
+    <div className="cartIndicatorContainer" onClick={openCart}>
       <div className="cartIndicatorContent">
         <img
           src="https://www.flaticon.com/svg/static/icons/svg/833/833314.svg"
