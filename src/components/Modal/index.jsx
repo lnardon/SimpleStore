@@ -28,7 +28,7 @@ function Modal({ item, setIsOpen, addItem }) {
           <div alt="add" className="modalControlsBtn">
             <img
               src="https://www.flaticon.com/svg/static/icons/svg/59/59220.svg"
-              alt="Minus"
+              alt="Minus "
             />
           </div>
           <h3 className="modalItemAmount">{amount}</h3>

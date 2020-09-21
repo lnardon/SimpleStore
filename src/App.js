@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import SectionHeader from "./components/SectionHeader";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/Modal";
+import CartIndicator from "./components/CartIndicator";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -172,6 +173,7 @@ function App() {
           </div>
         );
       })}
+      {cartItems.length ? <CartIndicator /> : null}
     </div>
   );
 }

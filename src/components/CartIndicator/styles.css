@@ -1,0 +1,41 @@
+.cartIndicatorContainer {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f27405;
+  cursor: pointer;
+  border-radius: 15px 15px 0px 0px;
+  animation: appearAnimation 0.5s ease-in-out forwards;
+}
+
+.cartIndicatorContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.cartIcon {
+  height: 25px;
+  margin-right: 2rem;
+}
+
+.cartIndicatorTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
