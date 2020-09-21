@@ -8,6 +8,7 @@ import Modal from "./components/Modal";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
+  const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState([
     {
       category: "Pizzas",
@@ -112,6 +113,13 @@ function App() {
     setIsOpen(!isOpen);
   }
 
+  function addItem(item, amount) {
+    let auxCartItems = cartItems;
+    auxCartItems.push({ item, amount });
+    setCartItems(auxCartItems);
+    setIsOpen(!isOpen);
+  }
+
   useEffect(() => {
     (async () => {
       const response = await fetch("");
@@ -122,7 +130,9 @@ function App() {
 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
-      {isOpen ? <Modal item={selectedItem} setIsOpen={setIsOpen} /> : null}
+      {isOpen ? (
+        <Modal item={selectedItem} setIsOpen={setIsOpen} addItem={addItem} />
+      ) : null}
       <Header image="https://personalwebsite-5d16b.web.app/images/nrdLogo.png" />
       {products.map((section) => {
         return (
