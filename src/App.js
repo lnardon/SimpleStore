@@ -141,7 +141,6 @@ function App() {
         width: "100%",
         maxWidth: "1200px",
         height: "100%",
-        position: "relative",
       }}
     >
       {isCartOpen ? (
