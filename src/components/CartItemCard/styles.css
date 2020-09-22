@@ -1,0 +1,10 @@
+.cartItemCardContainer {
+  display: flex;
+  width: 90%;
+  border-bottom: 2px solid #515151;
+}
+
+.cartItemImage {
+  width: 75px;
+  border-radius: 5px;
+}

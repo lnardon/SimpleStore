@@ -1,5 +1,6 @@
 .cartIndicatorContainer {
   width: 100%;
+  max-width: 1200px;
   height: 50px;
   position: fixed;
   bottom: 0px;

@@ -136,8 +136,17 @@ function App() {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: "100%", position: "relative" }}>
-      {isCartOpen ? <CartComponent closeCart={handleCart} /> : null}
+    <div
+      style={{
+        width: "100%",
+        maxWidth: "1200px",
+        height: "100%",
+        position: "relative",
+      }}
+    >
+      {isCartOpen ? (
+        <CartComponent closeCart={handleCart} cartItems={cartItems} />
+      ) : null}
       {isOpen ? (
         <Modal item={selectedItem} setIsOpen={setIsOpen} addItem={addItem} />
       ) : null}
@@ -153,6 +162,7 @@ function App() {
               alignItems: "center",
               flexWrap: "wrap",
               boxSizing: "border-box",
+              paddingBottom: "5rem",
             }}
           >
             <SectionHeader title={section.category} />

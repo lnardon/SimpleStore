@@ -1,11 +1,12 @@
 import React, { useRef } from "react";
 
 import "./styles.css";
+import CartItemCard from "../CartItemCard";
 
-function CartComponent({ closeCart }) {
+function CartComponent({ closeCart, cartItems }) {
   const cartRef = useRef(null);
 
-  function handleCartClose() {
+  function handleCartClose({ cartItems }) {
     cartRef.current.classList.add("closeCart");
     setTimeout(() => {
       closeCart();
@@ -21,6 +22,21 @@ function CartComponent({ closeCart }) {
           className="closeIcon"
           onClick={handleCartClose}
         />
+      </div>
+      <div className="cartHeader">
+        <img
+          src="https://personalwebsite-5d16b.web.app/images/nrdLogo.png"
+          alt="Company Logo"
+          className="cartHeaderLogo"
+        />
+        <div className="cartHeaderText">
+          <h2 className="cartHeaderTitle">Cosa Nostra Cucina</h2>
+        </div>
+      </div>
+      <div className="cartItemsContainer">
+        {cartItems.map((item) => {
+          return <CartItemCard item={item.item} />;
+        })}
       </div>
       <button className="finishBtn">Finalizar Compra</button>
     </div>
