@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import prods from "./products";
 
 import Header from "./components/Header";
 import SectionHeader from "./components/SectionHeader";
@@ -12,104 +13,7 @@ function App() {
   const [selectedItem, setSelectedItem] = useState({});
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [products, setProducts] = useState([
-    {
-      category: "Pizzas",
-      products: [
-        {
-          title: "Pizza P",
-          description: "pizza pequena e boa",
-          price: "24,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-        {
-          title: "Pizza G",
-          description: "pizza grande e tri boa",
-          price: "34,99",
-          image:
-            "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-        },
-      ],
-    },
-  ]);
+  const [products, setProducts] = useState(prods);
 
   function addProduct(product) {
     setSelectedItem(product);
