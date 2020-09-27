@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 
 import "./styles.css";
 import CartItemCard from "../CartItemCard";
+import InputField from "../InputField";
 
 function CartComponent({ closeCart, cartItems }) {
   const cartRef = useRef(null);
@@ -23,7 +24,7 @@ function CartComponent({ closeCart, cartItems }) {
           onClick={handleCartClose}
         />
       </div>
-      <div className="cartHeader">
+      {/* <div className="cartHeader">
         <img
           src="https://personalwebsite-5d16b.web.app/images/nrdLogo.png"
           alt="Company Logo"
@@ -32,11 +33,15 @@ function CartComponent({ closeCart, cartItems }) {
         <div className="cartHeaderText">
           <h2 className="cartHeaderTitle">Cosa Nostra Cucina</h2>
         </div>
-      </div>
+      </div> */}
       <div className="cartItemsContainer">
         {cartItems.map((item) => {
           return <CartItemCard item={item.item} />;
         })}
+      </div>
+      <div className="addressContainer">
+        <h2 className="cartSectionHeader">Informe seu endereço:</h2>
+        <InputField placeholder="test" type="text" label="Rua" />
       </div>
       <button className="finishBtn">Finalizar Compra</button>
     </div>

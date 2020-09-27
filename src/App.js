@@ -12,7 +12,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState({});
   const [cartItems, setCartItems] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(true);
   const [products, setProducts] = useState(prods);
 
   function addProduct(product) {

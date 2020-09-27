@@ -1,0 +1,23 @@
+.inputfieldContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+input {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 400;
+  padding: 0.25rem;
+  outline: none;
+  border: 1px solid #313131;
+  border-radius: 2px;
+  background-color: transparent;
+}
