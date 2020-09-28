@@ -40,8 +40,15 @@ function CartComponent({ closeCart, cartItems }) {
         })}
       </div>
       <div className="addressContainer">
-        <h2 className="cartSectionHeader">Informe seu endereço:</h2>
-        <InputField placeholder="test" type="text" label="Rua" />
+        <h2 className="cartSectionHeader">Local de entrega:</h2>
+        <InputField
+          placeholder="Rua B, Quadra 7"
+          type="text"
+          label="Endereço"
+        />
+        <InputField placeholder="Jardim Belo" type="text" label="Bairro" />
+        <InputField placeholder="Apto 17" type="text" label="Complemento" />
+        <InputField placeholder="(00) 00000-0000" type="text" label="Contato" />
       </div>
       <button className="finishBtn">Finalizar Compra</button>
     </div>
