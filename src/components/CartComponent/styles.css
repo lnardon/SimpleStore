@@ -76,6 +76,10 @@
   width: 100%;
 }
 
+.paymentContainer {
+  width: 90%;
+}
+
 .finishBtn {
   width: 90%;
   height: 35px;

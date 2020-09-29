@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import "./styles.css";
 import CartItemCard from "../CartItemCard";
 import InputField from "../InputField";
+import PaymentComponent from "../PaymentComponent";
 
 function CartComponent({ closeCart, cartItems }) {
   const cartRef = useRef(null);
@@ -49,6 +50,9 @@ function CartComponent({ closeCart, cartItems }) {
         <InputField placeholder="Jardim Belo" type="text" label="Bairro" />
         <InputField placeholder="Apto 17" type="text" label="Complemento" />
         <InputField placeholder="(00) 00000-0000" type="text" label="Contato" />
+      </div>
+      <div className="paymentContainer">
+        <PaymentComponent />
       </div>
       <button className="finishBtn">Finalizar Compra</button>
     </div>
