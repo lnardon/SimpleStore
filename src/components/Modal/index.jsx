@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 import "./styles.css";
+import closeIcon from "../../assets/icons/close.png";
+import minusIcon from "../../assets/icons/minus.png";
+import plusIcon from "../../assets/icons/close.png";
 
 function Modal({ item, setIsOpen, addItem }) {
   const [amount, setAmount] = useState(1);
@@ -10,7 +13,7 @@ function Modal({ item, setIsOpen, addItem }) {
       <div className="contentContainer">
         <div className="closeBtn">
           <img
-            src="https://www.flaticon.com/svg/static/icons/svg/1828/1828778.svg"
+            src={closeIcon}
             alt="Close"
             className="closeBtnIcon"
             onClick={() => setIsOpen(false)}
@@ -26,10 +29,7 @@ function Modal({ item, setIsOpen, addItem }) {
         />
         <div className="modalControls">
           <div alt="add" className="modalControlsBtn">
-            <img
-              src="https://www.flaticon.com/svg/static/icons/svg/59/59220.svg"
-              alt="Minus "
-            />
+            <img src={minusIcon} alt="Minus " />
           </div>
           <h3 className="modalItemAmount">{amount}</h3>
           <div
@@ -37,10 +37,7 @@ function Modal({ item, setIsOpen, addItem }) {
             className="modalControlsBtn"
             onClick={() => setAmount(amount + 1)}
           >
-            <img
-              src="https://www.flaticon.com/svg/static/icons/svg/860/860785.svg"
-              alt="Plus"
-            />
+            <img src={plusIcon} alt="Plus" />
           </div>
         </div>
         <button className="modalAddBtn" onClick={() => addItem(item, amount)}>

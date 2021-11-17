@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 
 import "./styles.css";
+import close from "../../assets/icons/close.png";
 import CartItemCard from "../CartItemCard";
 import InputField from "../InputField";
 import PaymentComponent from "../PaymentComponent";
@@ -19,13 +20,13 @@ function CartComponent({ closeCart, cartItems }) {
     <div className="cartContainer" ref={cartRef}>
       <div className="closeCartDiv">
         <img
-          src="https://www.flaticon.com/svg/static/icons/svg/271/271210.svg"
+          src={close}
           alt="Close"
           className="closeIcon"
           onClick={handleCartClose}
         />
       </div>
-      {/* <div className="cartHeader">
+      <div className="cartHeader">
         <img
           src="https://personalwebsite-5d16b.web.app/images/nrdLogo.png"
           alt="Company Logo"
@@ -34,7 +35,7 @@ function CartComponent({ closeCart, cartItems }) {
         <div className="cartHeaderText">
           <h2 className="cartHeaderTitle">Cosa Nostra Cucina</h2>
         </div>
-      </div> */}
+      </div>
       <div className="cartItemsContainer">
         {cartItems.map((item) => {
           return <CartItemCard item={item.item} />;
