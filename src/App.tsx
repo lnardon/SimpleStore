@@ -15,17 +15,17 @@ function App() {
   const [isCartOpen, setIsCartOpen] = useState(true);
   const [products, setProducts] = useState(prods);
 
-  function addProduct(product) {
-    setSelectedItem(product);
-    setIsOpen(!isOpen);
-  }
+  // function addProduct(product) {
+  //   setSelectedItem(product);
+  //   setIsOpen(!isOpen);
+  // }
 
-  function addItem(item, amount) {
-    let auxCartItems = cartItems;
-    auxCartItems.push({ item, amount });
-    setCartItems(auxCartItems);
-    setIsOpen(!isOpen);
-  }
+  // function addItem(item, amount) {
+  //   let auxCartItems = cartItems;
+  //   // auxCartItems.push({ item, amount });
+  //   setCartItems(auxCartItems);
+  //   setIsOpen(!isOpen);
+  // }
 
   function handleCart() {
     setIsCartOpen(!isCartOpen);
@@ -51,7 +51,7 @@ function App() {
         <CartComponent closeCart={handleCart} cartItems={cartItems} />
       ) : null}
       {isOpen ? (
-        <Modal item={selectedItem} setIsOpen={setIsOpen} addItem={addItem} />
+        <Modal item={selectedItem} setIsOpen={setIsOpen} addItem={() => {}} />
       ) : null}
       <Header image="https://personalwebsite-5d16b.web.app/images/nrdLogo.png" />
       {products.map((section) => {
@@ -84,7 +84,7 @@ function App() {
                 return (
                   <ProductCard
                     product={product}
-                    onClick={addProduct}
+                    onClick={() => {}}
                     key={index}
                   />
                 );
